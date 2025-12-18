@@ -1,0 +1,154 @@
+{
+  "name": "𝓢𝓸𝓶𝓷𝓪𝓽𝓱 𝓢𝓲𝓷𝓰𝓱",
+  "title": "AI & Data Science Student",
+  "bio": "Hi, I'm Somnath Singh. I love building IoT projects, exploring ethical hacking, creating APIs, and working with data. Always learning, always experimenting.",
+  "profilePic": "assets/icons/profile.gif",
+
+  "links": {
+    "github": "https://github.com/ZenoSom",
+    "linkedin": "https://www.linkedin.com/in/somnath-singh-zeno2006",
+    "instagram": "https://www.instagram.com/hackthesingh/",
+    "email": "singhsomnath2006@gmail.com"
+  },
+
+  "projects": [
+    {
+      "title": "AtmoDash – Weather & AQI",
+      "description": "Real-time weather and AQI dashboard with live API integration.",
+      "image": "assets/icons/atmodash.png",
+      "category": "Web",
+      "link": "https://atmodash-zeno-som.netlify.app",
+      "featured": true
+    },
+    {
+      "title": "Smart Waste IoT",
+      "description": "IoT-based smart waste monitoring system using sensors.",
+      "image": "assets/icons/smart-waste.png",
+      "category": "IoT",
+      "link": "https://github.com/ZenoSom/smart-waste-web--under-dev"
+    },
+    {
+      "title": "AI Material Classifier",
+      "description": "AI model to classify biodegradable vs non-biodegradable waste.",
+      "image": "assets/icons/bio-nonbio.png",
+      "category": "AI",
+      "link": ""
+    },
+    {
+      "title": "Cyber Security Toolkit",
+      "description": "Collection of security scripts and ethical hacking experiments.",
+      "image": "assets/icons/project-placeholder.png",
+      "category": "Security",
+      "link": "https://github.com/ZenoSom"
+    }
+  ],
+
+  "journey": {
+    "achievements": [
+      {
+        "title": "Open Source Contributor",
+        "year": "2024",
+        "description": "Actively contributed to GitHub repositories related to web and IoT projects."
+      },
+      {
+        "title": "Hackathon Finalist",
+        "year": "2024",
+        "description": "Selected among top teams in a national-level hackathon for an AI-based solution."
+      },
+      {
+        "title": "Top 10 Project Award",
+        "year": "2023",
+        "description": "Recognized for innovative IoT-based smart waste management system."
+      },
+      {
+        "title": "Best Mini Project",
+        "year": "2023",
+        "description": "Awarded for building a real-time weather and AQI dashboard."
+      },
+      {
+        "title": "Technical Event Winner",
+        "year": "2022",
+        "description": "Won first prize in a college-level technical innovation event."
+      }
+    ],
+
+    "certifications": [
+      {
+        "title": "AI & Machine Learning Certification",
+        "year": "2024",
+        "description": "Covered supervised, unsupervised learning, and model evaluation."
+      },
+      {
+        "title": "Cyber Security Fundamentals",
+        "year": "2023",
+        "description": "Learned ethical hacking basics, Linux security, and networking."
+      },
+      {
+        "title": "Python for Data Science",
+        "year": "2023",
+        "description": "Hands-on training in Python, NumPy, Pandas, and data visualization."
+      },
+      {
+        "title": "Web Development Bootcamp",
+        "year": "2022",
+        "description": "Completed full-stack basics including HTML, CSS, JavaScript."
+      },
+      {
+        "title": "IoT with Arduino",
+        "year": "2022",
+        "description": "Worked on sensors, microcontrollers, and real-time data collection."
+      }
+    ],
+
+    "experience": [
+      {
+        "title": "Open Source Developer",
+        "year": "2024",
+        "description": "Collaborated with developers on GitHub using pull requests."
+      },
+      {
+        "title": "Web Developer Intern",
+        "year": "2024",
+        "description": "Built reusable UI components, integrated APIs, and used Git in production."
+      },
+      {
+        "title": "IoT Project Contributor",
+        "year": "2023",
+        "description": "Worked on Arduino-based sensor systems and dashboards."
+      },
+      {
+        "title": "Freelance Web Developer",
+        "year": "2023",
+        "description": "Designed and developed responsive websites for small projects."
+      },
+      {
+        "title": "Technical Team Member",
+        "year": "2022",
+        "description": "Assisted in organizing and managing college technical events."
+      }
+    ]
+  },
+"skills": [
+        { "name": "HTML", "icon": "assets/icons/skill-html.png" },
+        { "name": "JavaScript", "icon": "assets/icons/skill-js.png" },
+        { "name": "CSS", "icon": "assets/icons/css-logo-64.png" },
+        { "name": "Linux", "icon": "assets/icons/icons8-linux-64.png" },
+        { "name": "Cyber Security", "icon": "assets/icons/icons8-cyber-security-64.png" }
+    ],
+
+    "technologies": [
+       
+        { "name": "Python", "icon": "assets/icons/tech-python.png" },
+        { "name": "Arduino", "icon": "assets/icons/tech-arduino.png" },
+        { "name": "Terminal", "icon": "assets/icons/console.png" },
+        { "name": "git", "icon": "assets/icons/icons8-git-64.png" },
+        { "name": "raspberryPi", "icon": "assets/icons/icons8-raspberry-pi-64.png" },
+        { "name": "Visual Studio", "icon": "assets/icons/icons8-visual-studio-64.png" },
+        { "name": "vercel", "icon":  "assets/icons/icons8-vercel-64.png" }
+    ],
+  "music": {
+    "src": "assets/track.mp3",
+    "title": "In The Dark – Swae Lee ft. Jhene Aiko",
+    "cover": "assets/icons/cover.png"
+  }
+}

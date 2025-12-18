@@ -1,0 +1,312 @@
+<!doctype html>
+<!-- Samurai Bio Portfolio Website for Somnath Singh -->
+<!-- Features: Hero section, projects carousel, journey with animated radio buttons, skills, music player, snow effect, cursor animation -->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Somnath Singh — Samurai Bio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+
+<!-- =======================
+     SAMURAI SWORD PRELOADER
+=========================== -->
+<div id="preloader">
+  <div class="sword-wrapper">
+    <div class="katana-blade"></div>
+    <div class="katana-handle"></div>
+  </div>
+</div>
+<audio id="swordSound" src="assets/sounds/slash.mp3" preload="auto"></audio>
+
+<!-- Background Video -->
+<!-- <video id="bg-video" autoplay muted loop playsinline>
+  <source src="assets/background.mp4" type="video/mp4" />
+</video> -->
+
+<!-- Snow Effect Canvas -->
+<canvas id="snow-canvas"></canvas>
+
+<!-- MUSIC BUTTON -->
+<button id="musicToggle" class="music-toggle">
+  <img src="assets/icons/music-icon.png" alt="music" />
+</button>
+
+<!-- MUSIC BAR -->
+<div id="musicBar" class="music-bar" style="display:none">
+  <img id="musicCover" class="music-cover" src="assets/icons/cover.png" />
+  <div class="music-meta">
+    <div id="trackName" class="track-name">Track</div>
+    <a id="trackExternal" class="track-ext" target="_blank">↗</a>
+  </div>
+  <button id="playPause" class="music-btn">▶</button>
+  <div class="volume-wrap"><input id="volumeRange" type="range" min="0" max="1" step="0.01" /></div>
+  <button id="closeMusic" class="music-close">✕</button>
+</div>
+
+<!-- HERO SECTION -->
+<header class="hero-wrap">
+  <section class="hero-card">
+    <img id="profilePic" class="avatar" src="assets/icons/profile.gif" alt="profile">
+    <h1 id="name">Your Name</h1>
+    <p id="title" class="subtitle">Your title</p>
+    <p id="bio" class="bio">Short bio — replace in assets/profile.json</p>
+
+    <div id="socials" class="social-icons"></div>
+  </section>
+</header>
+
+<!-- MAIN CONTENT -->
+<main class="content">
+
+<!-- ===============================
+     PROJECTS (GLASS CAROUSEL)
+================================ -->
+<section class="projects-section">
+  <h2 class="section-heading">Projects</h2>
+
+  <!-- FILTER TABS -->
+  <div class="project-filters">
+    <button class="filter-btn active" data-filter="All">All</button>
+    <button class="filter-btn web" data-filter="Web">Web</button>
+    <button class="filter-btn iot" data-filter="IoT">IoT</button>
+    <button class="filter-btn ai" data-filter="AI">AI</button>
+    <button class="filter-btn security" data-filter="Security">Security</button>
+  </div>
+
+  <!-- SLIDER -->
+  <div class="projects-slider" id="projectsSlider"></div>
+</section>
+<!-- ===============================
+     JOURNEY (GLASS VIEW)
+================================ -->
+<!-- JOURNEY SECTION -->
+<section class="journey-section">
+    <!-- Skill Badges -->
+    <div class="badges">
+  <span class="badge ai" title="AI / ML">🧠</span>
+  <span class="badge web" title="Web Development">🌐</span>
+  <span class="badge security" title="Cyber Security">🛡</span>
+  <span class="badge internship" title="Internship / Experience">⚙️</span>
+</div>
+
+<!-- Animated Radio Buttons for Journey Categories -->
+<div class="container">
+  <div class="radio-btn-group">
+    <input type="radio" name="stagger-radio-group" value="1" id="input-one" />
+    <label for="input-one">
+      <span>Achievements</span>
+      <svg height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
+        <g class="left">
+          <rect x="-100%" y="0" width="100%" height="2" />
+          <rect x="-100%" y="2" width="100%" height="2" />
+          <rect x="-100%" y="4" width="100%" height="2" />
+          <rect x="-100%" y="6" width="100%" height="2" />
+          <rect x="-100%" y="8" width="100%" height="2" />
+          <rect x="-100%" y="10" width="100%" height="2" />
+          <rect x="-100%" y="12" width="100%" height="2" />
+          <rect x="-100%" y="14" width="100%" height="2" />
+          <rect x="-100%" y="16" width="100%" height="2" />
+          <rect x="-100%" y="18" width="100%" height="2" />
+          <rect x="-100%" y="20" width="100%" height="2" />
+          <rect x="-100%" y="22" width="100%" height="2" />
+          <rect x="-100%" y="24" width="100%" height="2" />
+          <rect x="-100%" y="26" width="100%" height="2" />
+          <rect x="-100%" y="28" width="100%" height="2" />
+          <rect x="-100%" y="30" width="100%" height="2" />
+          <rect x="-100%" y="32" width="100%" height="2" />
+          <rect x="-100%" y="34" width="100%" height="2" />
+          <rect x="-100%" y="36" width="100%" height="2" />
+          <rect x="-100%" y="38" width="100%" height="2" />
+          <rect x="-100%" y="40" width="100%" height="2" />
+          <rect x="-100%" y="42" width="100%" height="2" />
+          <rect x="-100%" y="44" width="100%" height="2" />
+          <rect x="-100%" y="46" width="100%" height="2" />
+          <rect x="-100%" y="48" width="100%" height="2" />
+        </g>
+      </svg>
+    </label>
+  </div>
+
+  <div class="radio-btn-group">
+    <input type="radio" name="stagger-radio-group" value="2" id="input-two" />
+    <label for="input-two">
+      <span>Certifications</span>
+      <svg height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
+        <g class="left">
+          <rect x="-100%" y="0" width="100%" height="2" />
+          <rect x="-100%" y="2" width="100%" height="2" />
+          <rect x="-100%" y="4" width="100%" height="2" />
+          <rect x="-100%" y="6" width="100%" height="2" />
+          <rect x="-100%" y="8" width="100%" height="2" />
+          <rect x="-100%" y="10" width="100%" height="2" />
+          <rect x="-100%" y="12" width="100%" height="2" />
+          <rect x="-100%" y="14" width="100%" height="2" />
+          <rect x="-100%" y="16" width="100%" height="2" />
+          <rect x="-100%" y="18" width="100%" height="2" />
+          <rect x="-100%" y="20" width="100%" height="2" />
+          <rect x="-100%" y="22" width="100%" height="2" />
+          <rect x="-100%" y="24" width="100%" height="2" />
+          <rect x="-100%" y="26" width="100%" height="2" />
+          <rect x="-100%" y="28" width="100%" height="2" />
+          <rect x="-100%" y="30" width="100%" height="2" />
+          <rect x="-100%" y="32" width="100%" height="2" />
+          <rect x="-100%" y="34" width="100%" height="2" />
+          <rect x="-100%" y="36" width="100%" height="2" />
+          <rect x="-100%" y="38" width="100%" height="2" />
+          <rect x="-100%" y="40" width="100%" height="2" />
+          <rect x="-100%" y="42" width="100%" height="2" />
+          <rect x="-100%" y="44" width="100%" height="2" />
+          <rect x="-100%" y="46" width="100%" height="2" />
+          <rect x="-100%" y="48" width="100%" height="2" />
+        </g>
+      </svg>
+    </label>
+  </div>
+
+  <div class="radio-btn-group">
+    <input type="radio" name="stagger-radio-group" value="3" id="input-three" />
+    <label for="input-three">
+      <span>Experience</span>
+      <svg height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
+        <g class="left">
+          <rect x="-100%" y="0" width="100%" height="2" />
+          <rect x="-100%" y="2" width="100%" height="2" />
+          <rect x="-100%" y="4" width="100%" height="2" />
+          <rect x="-100%" y="6" width="100%" height="2" />
+          <rect x="-100%" y="8" width="100%" height="2" />
+          <rect x="-100%" y="10" width="100%" height="2" />
+          <rect x="-100%" y="12" width="100%" height="2" />
+          <rect x="-100%" y="14" width="100%" height="2" />
+          <rect x="-100%" y="16" width="100%" height="2" />
+          <rect x="-100%" y="18" width="100%" height="2" />
+          <rect x="-100%" y="20" width="100%" height="2" />
+          <rect x="-100%" y="22" width="100%" height="2" />
+          <rect x="-100%" y="24" width="100%" height="2" />
+          <rect x="-100%" y="26" width="100%" height="2" />
+          <rect x="-100%" y="28" width="100%" height="2" />
+          <rect x="-100%" y="30" width="100%" height="2" />
+          <rect x="-100%" y="32" width="100%" height="2" />
+          <rect x="-100%" y="34" width="100%" height="2" />
+          <rect x="-100%" y="36" width="100%" height="2" />
+          <rect x="-100%" y="38" width="100%" height="2" />
+          <rect x="-100%" y="40" width="100%" height="2" />
+          <rect x="-100%" y="42" width="100%" height="2" />
+          <rect x="-100%" y="44" width="100%" height="2" />
+          <rect x="-100%" y="46" width="100%" height="2" />
+          <rect x="-100%" y="48" width="100%" height="2" />
+        </g>
+      </svg>
+    </label>
+  </div>
+
+  
+</div>
+
+
+  <div class="journey-cards" id="journeyCards"></div>
+
+</section>
+
+<!-- Modal for Journey Item Details -->
+<!-- GLASS MODAL -->
+<div class="journey-modal hidden" id="journeyModal">
+  <div class="journey-modal-card">
+    <h3 id="jTitle"></h3>
+    <span id="jYear"></span>
+    <p id="jDesc"></p>
+    <button onclick="closeJourney()">Close</button>
+  </div>
+</div>
+
+
+
+  <!-- Skills -->
+  <section class="section skills-section">
+    <h2 class="section-heading">Skills & Technologies</h2>
+    <div class="icons-center">
+      <div id="skillsGrid" class="icons-grid"></div>
+      <div id="techGrid" class="icons-grid"></div>
+    </div>
+  </section>
+
+</main>
+
+<audio id="audio" preload="metadata"></audio>
+
+      
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="samurai-sword">
+    <div class="sword-blade"></div>
+    <div class="sword-handle"></div>
+  </div>
+
+  <p class="footer-text">
+    Made with <span class="heart">❤️</span> by 
+    <span class="name-glow">Somnath Singh</span>
+  </p>
+
+  <canvas id="sakura-canvas"></canvas>
+  <button id="backToTop" class="back-to-top">↑</button>
+</footer>
+
+<!-- CONTACT FORM -->
+<section class="contact-section">
+  <h2 class="contact-heading">Connect Me</h2>
+
+  <form action="https://formsubmit.co/singhsomnath2006@gmail.com" method="POST" class="contact-form">
+
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_subject" value="New Contact Form Submission!">
+    <input type="hidden" name="_template" value="box">
+    <input type="hidden" name="_next" value="https://your-website-url.com/thank-you.html">
+
+    <div class="form-row">
+      <label>Your Name</label>
+      <input type="text" name="name" required>
+    </div>
+
+    <div class="form-row">
+      <label>Your Email</label>
+      <input type="email" name="email" required>
+    </div>
+
+    <div class="form-row">
+      <label>Reason for Contact</label>
+      <select name="reason" required>
+        <option value="">Select reason...</option>
+        <option>Project Inquiry</option>
+        <option>Collaboration</option>
+        <option>Help Needed</option>
+        <option>Just Saying Hi</option>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <label>Message</label>
+      <textarea name="message" required></textarea>
+    </div>
+
+    <button type="submit" class="submit-btn">Send Message</button>
+  </form>
+</section>
+<!-- WebGL Cursor Mount -->
+<div id="webgl-cursor">
+  <canvas id="cursor-canvas"></canvas>
+</div>
+
+<!-- Tubes Cursor Animation Script -->
+<script type="module" src="cursor/cursor.js"></script>
+
+<!-- GSAP Library for Animations -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+<!-- Main Script -->
+<script src="script.js"></script>
+</body>
+</html>
