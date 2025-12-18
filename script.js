@@ -139,12 +139,32 @@ function setupMusic(music){
   trackExternal.href = music.src || "#";
   cover.src = music.cover || "assets/icons/cover.png";
 
-  // attempt autoplay (might be blocked)
-  audio.play().catch(()=>{/*ignore*/});
+  // Wait for audio to load, then attempt autoplay
+  audio.addEventListener('canplaythrough', () => {
+    audio.play().catch(() => {
+      console.log("Autoplay blocked - user interaction required");
+      playPause.textContent = "▶"; // Show play button if autoplay fails
+      // Add one-time click listener to play on first interaction
+      const playOnInteraction = () => {
+        audio.play().catch(() => {});
+        document.removeEventListener('click', playOnInteraction);
+        document.removeEventListener('keydown', playOnInteraction);
+      };
+      document.addEventListener('click', playOnInteraction);
+      document.addEventListener('keydown', playOnInteraction);
+    });
+  }, { once: true });
 
-  // toggle music bar visibility
+  // Set initial button state
+  playPause.textContent = "⏸"; // Assume it will play
+
+  // toggle music bar visibility (now hides it since it's visible by default)
   toggle.addEventListener("click", ()=> {
-    musicBar.style.display = "flex";
+    if (musicBar.style.display === "none" || musicBar.style.display === "") {
+      musicBar.style.display = "flex";
+    } else {
+      musicBar.style.display = "none";
+    }
   });
   closeBtn.addEventListener("click", ()=> {
     musicBar.style.display = "none";
@@ -152,8 +172,14 @@ function setupMusic(music){
 
   // play/pause (no fade)
   playPause.addEventListener("click", ()=>{
-    if(audio.paused){ audio.play().catch(()=>{}); playPause.textContent = "⏸"; }
-    else { audio.pause(); playPause.textContent = "▶"; }
+    if(audio.paused){ 
+      audio.play().catch(()=>{}); 
+      playPause.textContent = "⏸"; 
+    }
+    else { 
+      audio.pause(); 
+      playPause.textContent = "▶"; 
+    }
   });
 
   volumeRange.addEventListener("input", e=>{
@@ -415,17 +441,18 @@ window.addEventListener("DOMContentLoaded", () => {
   // delay must match katana animation timing
   setTimeout(() => {
     if (swordSound) {
-      swordSound.volume = 0.65; // adjust volume
+      swordSound.volume = 0.8; // increased volume
       swordSound.play().catch(() => {});
     }
-  }, 650); 
+  }, 600); // slightly earlier timing
   // timing: sword appears at 0.0s, grows at 0.3s, SLASH peak around 0.6s
 });
 /* Impact sound slightly after the slash */
 setTimeout(() => {
-  const impact = new Audio("assets/sounds/impact.mp3");
-  impact.volume = 0.45;
-  impact.play().catch(()=>{});
+  // const impact = new Audio("assets/sounds/impact.mp3");
+  // impact.volume = 0.45;
+  // impact.play().catch(()=>{});
+  // Disabled - impact.mp3 file missing
 }, 950);
 // -------------------------
 
@@ -631,6 +658,22 @@ document.addEventListener("DOMContentLoaded", () => {
   if (defaultRadio) {
     defaultRadio.checked = true;
   }
+
+  // Neural section fade-in animation on scroll
+  const neuralSection = document.querySelector('.neural-section');
+  if (neuralSection) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    observer.observe(neuralSection);
+  }
 });
+
+
+
 
 
