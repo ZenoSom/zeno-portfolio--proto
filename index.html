@@ -1,6 +1,4 @@
 <!doctype html>
-<!-- Samurai Bio Portfolio Website for Somnath Singh -->
-<!-- Features: Hero section, projects carousel, journey with animated radio buttons, skills, music player, snow effect, cursor animation -->
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -11,10 +9,6 @@
 
 <body>
 
-
-<!-- =======================
-     SAMURAI SWORD PRELOADER
-=========================== -->
 <div id="preloader">
   <div class="sword-wrapper">
     <div class="katana-blade"></div>
@@ -23,20 +17,12 @@
 </div>
 <audio id="swordSound" src="assets/sounds/slash.mp3" preload="auto"></audio>
 
-<!-- Background Video -->
-<!-- <video id="bg-video" autoplay muted loop playsinline>
-  <source src="assets/background.mp4" type="video/mp4" />
-</video> -->
-
-<!-- Snow Effect Canvas -->
 <canvas id="snow-canvas"></canvas>
 
-<!-- MUSIC BUTTON -->
 <button id="musicToggle" class="music-toggle">
   <img src="assets/icons/music-icon.png" alt="music" />
 </button>
 
-<!-- MUSIC BAR -->
 <div id="musicBar" class="music-bar" style="display:flex">
   <img id="musicCover" class="music-cover" src="assets/icons/cover.png" />
   <div class="music-meta">
@@ -48,7 +34,6 @@
   <button id="closeMusic" class="music-close">✕</button>
 </div>
 
-<!-- HERO SECTION -->
 <header class="hero-wrap">
   <section class="hero-card">
     <img id="profilePic" class="avatar" src="assets/icons/profile.gif" alt="profile">
@@ -60,16 +45,11 @@
   </section>
 </header>
 
-<!-- MAIN CONTENT -->
 <main class="content">
 
-<!-- ===============================
-     PROJECTS (GLASS CAROUSEL)
-================================ -->
 <section class="projects-section">
   <h2 class="section-heading">Projects</h2>
 
-  <!-- FILTER TABS -->
   <div class="project-filters">
     <button class="filter-btn active" data-filter="All">All</button>
     <button class="filter-btn web" data-filter="Web">Web</button>
@@ -78,15 +58,10 @@
     <button class="filter-btn security" data-filter="Security">Security</button>
   </div>
 
-  <!-- SLIDER -->
   <div class="projects-slider" id="projectsSlider"></div>
 </section>
-<!-- ===============================
-     JOURNEY (GLASS VIEW)
-================================ -->
-<!-- JOURNEY SECTION -->
+
 <section class="journey-section">
-    <!-- Skill Badges -->
     <div class="badges">
   <span class="badge ai" title="AI / ML">🧠</span>
   <span class="badge web" title="Web Development">🌐</span>
@@ -94,7 +69,6 @@
   <span class="badge internship" title="Internship / Experience">⚙️</span>
 </div>
 
-<!-- Animated Radio Buttons for Journey Categories -->
 <div class="container">
   <div class="radio-btn-group">
     <input type="radio" name="stagger-radio-group" value="1" id="input-one" />
@@ -212,8 +186,6 @@
 
 </section>
 
-<!-- Modal for Journey Item Details -->
-<!-- GLASS MODAL -->
 <div class="journey-modal hidden" id="journeyModal">
   <div class="journey-modal-card">
     <h3 id="jTitle"></h3>
@@ -223,11 +195,6 @@
   </div>
 </div>
 
-
-
-
-
-  <!-- Neural Network Visualization -->
   <section class="neural-section">
     <h2 class="section-heading">Neural Network Visualization</h2>
     <div class="neural-container">
@@ -235,7 +202,6 @@
     </div>
   </section>
 
-  <!-- Skills -->
   <section class="section skills-section">
     <h2 class="section-heading">Skills & Technologies</h2>
     <div class="icons-center">
@@ -249,9 +215,6 @@
 <audio id="audio" preload="metadata"></audio>
 
       
-<!-- FOOTER -->
-
-
 
 <footer class="footer">
   <div class="samurai-sword">
@@ -276,8 +239,6 @@
 </p>
 </footer>
 
-<!-- CONTACT SECTION -->
-<!-- CONTACT -->
 <section class="contact-section" id="contact">
   <div class="main-container">
     <div class="card-container">
@@ -324,11 +285,10 @@
               <textarea name="message" placeholder="Write your message..." required></textarea>
             </div>
 
-            <!-- FormSubmit hidden fields -->
             <input type="hidden" name="_captcha" value="false">
             <input type="hidden" name="_subject" value="New Contact Form Submission!">
             <input type="hidden" name="_template" value="box">
-            <input type="hidden" name="_next" value="https://yourwebsite.com/thankyou.html"> <!-- Optional: redirect after submit -->
+            <input type="hidden" name="_next" value="https://yourwebsite.com/thankyou.html">
 
             <button type="submit" class="submit-btn">Send Message</button>
 
@@ -340,18 +300,14 @@
   </div>
 </section>
 
-<!-- WebGL Cursor Mount -->
 <div id="webgl-cursor">
   <canvas id="cursor-canvas"></canvas>
 </div>
 
-<!-- Tubes Cursor Animation Script -->
 <script type="module" src="cursor/cursor.js"></script>
 
-<!-- GSAP Library for Animations -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
-<!-- Main Script -->
 <script src="script.js"></script>
 </body>
 </html>
