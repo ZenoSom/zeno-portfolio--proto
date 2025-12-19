@@ -1043,3 +1043,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Here’s a clean, professional copyright + license setup you can directly use on your website.
 document.getElementById("year").textContent = new Date().getFullYear();
+
+
+
+
+
+
+
+
+

@@ -1458,29 +1458,29 @@ label {
 
 
 /* =====================================================
-   FINAL MOBILE LAYOUT FIX — SAFE FOR THIS PROJECT
-   Paste at the VERY END of styles.css
+   ✅ FINAL MOBILE VIEW (ONLY MOBILE, SAFE, CLEAN)
+   Screen ≤ 768px
 ===================================================== */
 @media (max-width: 768px) {
 
-  /* Prevent sideways scrolling */
+  /* ---------- GLOBAL SAFETY ---------- */
   html, body {
+    width: 100%;
     overflow-x: hidden;
   }
 
   * {
     box-sizing: border-box;
-    max-width: 100%;
   }
 
-  /* ---------------- HERO ---------------- */
+  /* ---------- HERO SECTION ---------- */
   .hero-wrap {
-    padding: 24px 14px;
+    padding: 20px 14px;
   }
 
   .hero-card {
-    width: 100% !important;
-    padding: 22px 16px;
+    width: 100%;
+    padding: 20px 16px;
     border-radius: 20px;
   }
 
@@ -1499,7 +1499,31 @@ label {
     line-height: 1.5;
   }
 
-  /* ---------------- ICON GRIDS ---------------- */
+  /* ---------- SOCIAL ICONS ---------- */
+  .social-icons {
+    gap: 16px;
+  }
+
+  .social-icons img {
+    width: 30px;
+    height: 30px;
+  }
+
+  /* ---------- PROJECTS ---------- */
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-slider {
+    padding: 12px;
+    gap: 14px;
+  }
+
+  .project-card {
+    flex: 0 0 88%;
+  }
+
+  /* ---------- SKILLS / TECH ---------- */
   .icons-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
@@ -1510,23 +1534,9 @@ label {
     height: 110px;
   }
 
-  /* ---------------- PROJECT SLIDER ---------------- */
-  .projects-slider {
-    padding: 12px;
-    gap: 14px;
-  }
-
-  .project-card {
-    flex: 0 0 85%;
-  }
-
-  .project-card img {
-    height: 140px;
-  }
-
-  /* ---------------- JOURNEY ---------------- */
+  /* ---------- JOURNEY ---------- */
   .journey-section {
-    margin: 50px 12px;
+    margin: 40px 12px;
   }
 
   .journey-tabs {
@@ -1534,40 +1544,122 @@ label {
     gap: 10px;
   }
 
-  /* ---------------- ELECTRIC BORDER / CONTACT ---------------- */
-  .canvas-container,
-  .electric-border-canvas {
-    width: 100% !important;
-    height: auto !important;
-  }
-
-  .content-top,
-  .content-bottom {
-    padding: 24px;
-  }
-
-  /* ---------------- MUSIC BAR ---------------- */
-  .music-bar {
-    left: 10px;
+  /* ---------- MUSIC PLAYER ---------- */
+  .music-toggle {
+    top: 10px;
     right: 10px;
-    width: auto;
   }
 
-  /* ---------------- BACK TO TOP ---------------- */
+  .music-bar {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100vw - 20px);
+    padding: 10px;
+    border-radius: 14px;
+    z-index: 90;
+  }
+
+  .music-meta {
+    min-width: 0;
+  }
+
+  .track-name {
+    font-size: 13px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .volume-wrap {
+    display: none;
+  }
+
+  /* =====================================================
+   🔥 FINAL CONTACT FORM MOBILE FIX (LABEL + INPUT)
+===================================================== */
+@media (max-width: 768px) {
+
+  /* Reset all fancy positioning inside contact form */
+  .contact-section * {
+    transform: none !important;
+  }
+
+  /* Stack form properly */
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 18px;
+  }
+
+  /* FIX LABEL CARDS */
+  .form-row label {
+    position: static !important;
+    align-self: flex-start;
+
+    width: auto;
+    padding: 8px 14px;
+    border-radius: 10px;
+
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(8px);
+
+    font-size: 14px;
+    font-weight: 600;
+    text-align: left;
+  }
+
+  /* FIX INPUTS */
+  .form-row input,
+  .form-row select,
+  .form-row textarea {
+    width: 100%;
+    padding: 14px;
+    border-radius: 12px;
+    font-size: 16px;
+  }
+
+  /* MESSAGE BOX HEIGHT FIX */
+  .form-row textarea {
+    min-height: 120px;
+  }
+
+  /* SEND BUTTON */
+  .submit-btn {
+    margin-top: 10px;
+    width: 100%;
+  }
+
+}
+
+  /* ---------- FOOTER ---------- */
+  .footer {
+    padding: 40px 14px 70px;
+  }
+
+  /* ---------- BACK TO TOP ---------- */
   .back-to-top {
-    right: 14px;
-    bottom: 14px;
     width: 44px;
     height: 44px;
     font-size: 22px;
+    right: 12px;
+    bottom: 12px;
   }
 
-  /* ---------------- CANVAS EFFECTS ---------------- */
-  #sakura-canvas {
-    height: 120px;
-  }
-
+  /* ---------- EFFECT REDUCTION (PERFORMANCE) ---------- */
   #snow-canvas {
     opacity: 0.6;
+  }
+
+  #sakura-canvas {
+    height: 120px;
   }
 }
