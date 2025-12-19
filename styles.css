@@ -1438,3 +1438,136 @@ label {
 
 
 
+       
+
+
+
+/* /* Content sections - Layout for form content */*/
+
+.footer-copyright {
+  margin-top: 10px;
+  font-size: 14px;
+  opacity: 0.85;
+  letter-spacing: 0.4px;
+}
+
+.footer-license {
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+
+/* =====================================================
+   FINAL MOBILE LAYOUT FIX — SAFE FOR THIS PROJECT
+   Paste at the VERY END of styles.css
+===================================================== */
+@media (max-width: 768px) {
+
+  /* Prevent sideways scrolling */
+  html, body {
+    overflow-x: hidden;
+  }
+
+  * {
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+
+  /* ---------------- HERO ---------------- */
+  .hero-wrap {
+    padding: 24px 14px;
+  }
+
+  .hero-card {
+    width: 100% !important;
+    padding: 22px 16px;
+    border-radius: 20px;
+  }
+
+  .avatar {
+    width: 96px;
+    height: 96px;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  .subtitle,
+  .bio {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* ---------------- ICON GRIDS ---------------- */
+  .icons-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .icon-card {
+    width: 100%;
+    height: 110px;
+  }
+
+  /* ---------------- PROJECT SLIDER ---------------- */
+  .projects-slider {
+    padding: 12px;
+    gap: 14px;
+  }
+
+  .project-card {
+    flex: 0 0 85%;
+  }
+
+  .project-card img {
+    height: 140px;
+  }
+
+  /* ---------------- JOURNEY ---------------- */
+  .journey-section {
+    margin: 50px 12px;
+  }
+
+  .journey-tabs {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  /* ---------------- ELECTRIC BORDER / CONTACT ---------------- */
+  .canvas-container,
+  .electric-border-canvas {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .content-top,
+  .content-bottom {
+    padding: 24px;
+  }
+
+  /* ---------------- MUSIC BAR ---------------- */
+  .music-bar {
+    left: 10px;
+    right: 10px;
+    width: auto;
+  }
+
+  /* ---------------- BACK TO TOP ---------------- */
+  .back-to-top {
+    right: 14px;
+    bottom: 14px;
+    width: 44px;
+    height: 44px;
+    font-size: 22px;
+  }
+
+  /* ---------------- CANVAS EFFECTS ---------------- */
+  #sakura-canvas {
+    height: 120px;
+  }
+
+  #snow-canvas {
+    opacity: 0.6;
+  }
+}
