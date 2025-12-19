@@ -1,14 +1,14 @@
 {
   "name": "𝓢𝓸𝓶𝓷𝓪𝓽𝓱 𝓢𝓲𝓷𝓰𝓱",
-  "title": "AI & Data Science Student",
-  "bio": "Hi, I'm Somnath Singh. I love building IoT projects, exploring ethical hacking, creating APIs, and working with data. Always learning, always experimenting.",
+  "title": "AI & Data Science Student | IIT-J",
+  "bio": "Being an AI and Data Science student at 𝕀𝕀𝕋 𝕁 with a strong interest in building intelligent systems and data-driven solutions. My experience spans IoT-based projects, applied machine learning, API development, and ethical cybersecurity practices. I enjoy working at the intersection of hardware, software, and data, with a constant focus on learning, experimentation, and real-world problem solving.",
   "profilePic": "assets/icons/profile.gif",
 
   "links": {
     "github": "https://github.com/ZenoSom",
     "linkedin": "https://www.linkedin.com/in/somnath-singh-zeno2006",
     "instagram": "https://www.instagram.com/hackthesingh/",
-    "email": "singhsomnath2006@gmail.com"
+    "email": "mailto:singhsomnath2006@gmail.com?subject=Portfolio%20Contact"
   },
 
   "projects": [
@@ -27,38 +27,73 @@
       "category": "IoT",
       "link": "https://github.com/ZenoSom/smart-waste-web--under-dev"
     },
-    {
-      "title": "AI Material Classifier",
+  {
+    "title": "Resistor Pro -v1.9. -zeno",
+    "description": "Advanced resistor color-code calculator — live color preview, reverse calc, dark mode & save favorites",
+    "image": "assets/icons/project-placeholder.png",
+    "category": "Web",
+    "link": "https://resistor-calculator-v1-9.vercel.app/"
+  },
+  {
+    "title": "AI Material Classifier",
       "description": "AI model to classify biodegradable vs non-biodegradable waste.",
-      "image": "assets/icons/bio-nonbio.png",
+      "image": "assets/icons/Screenshot 2025-11-23 at 8.04.58 PM.png",
       "category": "AI",
       "link": ""
     },
     {
-      "title": "Cyber Security Toolkit",
-      "description": "Collection of security scripts and ethical hacking experiments.",
-      "image": "assets/icons/project-placeholder.png",
+      "title": "Solar Intelligence Tracker",
+      "description": "Real-time LDR-based Arduino system with IoT control enabling 180°–360° sun-aligned rotation for optimal power output",
+      "image": "assets/icons/Videoshot_20251219_171137.jpg",
+      "category": "IoT",
+      "link": ""
+    },
+    {
+      "title": "ESP muradar / jammer” + Blue Py / GSM",
+      "description": "An academic ESP-based study on wireless interference concepts, oncepts that cannot be publicly documented due to potential misuse and regulatory constraints.",
+      "image": "assets/icons/IMG_20251219_170926.jpg",
       "category": "Security",
-      "link": "https://github.com/ZenoSom"
+      "link": ""
+    },
+    {
+      "title": "NodeLink Console + SerialX",
+      "description": "A unified web interface for serial communication and live data exchange with IoT modules.",
+      "image": "assets/icons/IMG_20251219_171044.jpg",
+      "category": "Security",
+      "link": ""
+    },
+    {
+      "title": "IntelliSafe Transport System(Smart Road System)",
+      "description": "A multidisciplinary safety system combining AI, Arduino, and IoT with automated bridge control and hydraulics-based railway mechanisms to reduce accident risks. 1st Prize-Winner ",
+      "image": "assets/icons/IMG_20251219_170557.jpg",
+      "category": "IoT",
+      "link": ""
+    },
+    {
+      "title": "ESP RF Vulnerability Analysis",
+      "description": "An academic ESP-based study on wireless interference concepts, oncepts that cannot be publicly documented due to potential misuse and regulatory constraints.",
+      "image": "assets/icons/1766151189703.jpg",
+      "category": "Security",
+      "link": ""
     }
   ],
 
   "journey": {
     "achievements": [
+{
+  "title": "🥇 Central Level Winner – Science & Mathematics Exhibition",
+  "year": "2024",
+  "description": "Achieved First Rank at the Central Level Science & Mathematics Exhibition conducted by the Directorate of Education, Delhi.Recognized for excellence in conceptual clarity, real-world application, and presentation skills through a science model at Science Centre Central." 
+},
+  {
+  "title": "🥇 First Position – Central Level Science & Mathematics Exhibition (Delhi)",
+  "year": "2025",
+  "description": "Secured First Position at the Central Level in the Science & Mathematics Exhibition (Session 2023–2024) organized by the Directorate of Education, Government of NCT of Delhi at Science Centre . An innovative working model on Transport and Communication, demonstrating strong analytical thinking, problem-solving ability, and scientific innovation."
+},
       {
-        "title": "Open Source Contributor",
-        "year": "2024",
-        "description": "Actively contributed to GitHub repositories related to web and IoT projects."
-      },
-      {
-        "title": "Hackathon Finalist",
-        "year": "2024",
-        "description": "Selected among top teams in a national-level hackathon for an AI-based solution."
-      },
-      {
-        "title": "Top 10 Project Award",
+        "title": "Delhi Rank 1 – Orange Global Olympiad (Astronomy)",
         "year": "2023",
-        "description": "Recognized for innovative IoT-based smart waste management system."
+        "description": "RSecured Rank 1 in Delhi in the Orange Global Olympiad (Astronomy).Recognized for exceptional performance, strong scientific aptitude, and advanced understanding of astronomy concepts among participants across Delhi."
       },
       {
         "title": "Best Mini Project",
@@ -74,25 +109,26 @@
 
     "certifications": [
       {
-        "title": "AI & Machine Learning Certification",
-        "year": "2024",
-        "description": "Covered supervised, unsupervised learning, and model evaluation."
-      },
-      {
-        "title": "Cyber Security Fundamentals",
-        "year": "2023",
-        "description": "Learned ethical hacking basics, Linux security, and networking."
-      },
-      {
-        "title": "Python for Data Science",
-        "year": "2023",
-        "description": "Hands-on training in Python, NumPy, Pandas, and data visualization."
-      },
-      {
-        "title": "Web Development Bootcamp",
-        "year": "2022",
-        "description": "Completed full-stack basics including HTML, CSS, JavaScript."
-      },
+  "title": "Summer Training Programme on Remote Sensing & GIS",
+  "year": "2021",
+  "description": "Successfully completed an online summer training programme conducted by the Indian Institute of Remote Sensing (IIRS), ISRO, focusing on fundamentals and applications of Remote Sensing and GIS technologies."
+},
+{
+  "title": "Online Summer School on Remote Sensing & GIS for Environmental Studies",
+  "year": "2021",
+  "description": "Completed an advanced online summer school by IIRS, ISRO highlighting the usefulness of Remote Sensing and GIS in environmental studies, resource monitoring, and sustainable development."
+},
+     {
+  "title": "Composio x DevClub IIT Delhi Hackathon – Agents in Production",
+  "year": "2024",
+  "description": "Received a Certificate of Participation from the Indian Institute of Technology (IIT) Delhi for participating in the Composio x DevClub IITD x Chirality Labs ‘Agents in Production’ Hackathon, demonstrating problem-solving skills, dedication, and collaborative development."
+},
+     {
+  "title": "AI, ML & Data Science Workshop  IIT Roorkee",
+  "year": "2025",
+  "description": "Participated in an intensive  workshop focused on the core principles and practical applications of Artificial Intelligence, Machine Learning, and Data Science, conducted by industry experts from Ethical Edufabrica in association with Sangram ’25, the annual techno-management festival of IIT Roorkee."
+},
+
       {
         "title": "IoT with Arduino",
         "year": "2022",
@@ -101,25 +137,25 @@
     ],
 
     "experience": [
+{
+  "title": "Indian Space Academy (Intern)",
+  "year": "2025",
+  "description": "Intern — Indian Space Academy. Successfully completed an internship at the Indian Space Academy, where I developed a Land Use Land Cover (LULC) classification project for the Delhi NCR region using satellite imagery and geospatial analysis techniques, and fulfilled all project objectives within the stipulated time period."
+},
       {
-        "title": "Open Source Developer",
-        "year": "2024",
-        "description": "Collaborated with developers on GitHub using pull requests."
+        "title": "PRP ENTERPRISES -(Technical Support Executive)",
+        "year": "2025-Present",
+        "description": "Currently responsible for managing and overseeing all technical operations, including computer systems, hardware maintenance, software installation, troubleshooting, and overall IT support to ensure smooth day-to-day business operations."
       },
       {
-        "title": "Web Developer Intern",
-        "year": "2024",
-        "description": "Built reusable UI components, integrated APIs, and used Git in production."
+        "title": "Technical Support (Under Authority) — India Post",
+        "year": "2025-Present",
+        "description": "Providing technical support for computer systems and hardware at India Post, including maintenance of PCs, peripheral devices, system setup, basic software support, and troubleshooting to ensure uninterrupted daily operations."
       },
       {
-        "title": "IoT Project Contributor",
-        "year": "2023",
-        "description": "Worked on Arduino-based sensor systems and dashboards."
-      },
-      {
-        "title": "Freelance Web Developer",
-        "year": "2023",
-        "description": "Designed and developed responsive websites for small projects."
+        "title": "Visual Content Specialist",
+        "year": "2022",
+        "description": "Produced high-impact, cinematic video content featuring advanced motion transitions, timing-based visual storytelling, and stylized effects for gaming creators. Focused on delivering visually immersive edits with professional pacing, animation flow, and polished post-production quality."
       },
       {
         "title": "Technical Team Member",

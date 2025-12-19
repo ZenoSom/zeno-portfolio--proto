@@ -614,179 +614,6 @@ h1{
   transform: scale(1.2) translateY(-4px);
   filter: drop-shadow(0 0 14px rgba(255,120,247,1));
 }
-/* ======================================================
-   SAMURAI CONTACT SECTION (glass + neon)
-====================================================== */
-/* Contact section with glassmorphism card and interactive social links */
-/* Features: Centered layout, hover effects on contact items, responsive design */
-/* Important: Uses backdrop-filter for glass effect, neon glow on hover */
-.contact-section {
-  margin-top: 40px;
-  margin-bottom: 60px;
-  text-align: center;
-  padding: 30px 0;
-  position: relative;
-  z-index: 25; /* Increased to ensure it's above footer */
-}
-
-.contact-heading {
-  font-size: 32px;
-  margin-bottom: 26px;
-  font-weight: 800;
-  text-shadow:
-    0 0 16px rgba(255,120,247,0.7),
-    0 0 24px rgba(120,200,255,0.7);
-}
-
-.contact-card {
-  width: 90%;
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 26px;
-  border-radius: 22px;
-  background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(14px) saturate(150%);
-  border: 1px solid rgba(255,255,255,0.12);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.45);
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.contact-item {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  justify-content: center;
-}
-
-.contact-item img {
-  width: 32px;
-  height: 32px;
-  filter: drop-shadow(0 0 10px rgba(255,120,247,1));
-  transition: 0.3s ease;
-}
-
-.contact-item a {
-  font-size: 18px;
-  text-decoration: none;
-  color: white;
-  transition: 0.3s ease;
-}
-
-.contact-item:hover img {
-  transform: scale(1.2);
-  filter: drop-shadow(0 0 16px rgba(255,120,247,1));
-}
-
-.contact-item:hover a {
-  color: var(--accent);
-  text-shadow:
-    0 0 10px rgba(255,120,247,0.9),
-    0 0 18px rgba(120,200,255,0.9);
-}
-
-@media (max-width: 600px) {
-  .contact-item a {
-    font-size: 16px;
-  }
-}
-/* ======================================================
-   CONTACT FORM (Glass + Neon Samurai Style)
-====================================================== */
-/* Contact form with glassmorphism styling and neon focus effects */
-/* Features: Form validation styling, submit button with hover animations */
-/* Important: Uses backdrop-filter for glass effect, focus states with glow */
-.contact-form {
-  width: 90%;
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 28px;
-  border-radius: 22px;
-
-  background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(14px) saturate(150%);
-  border: 1px solid rgba(255,255,255,0.14);
-  box-shadow: 0 22px 60px rgba(0,0,0,0.55);
-
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
-  position: relative;
-  z-index: 1;
-}
-
-.form-row {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-}
-
-.form-row label {
-  margin-bottom: 6px;
-  font-weight: 600;
-  font-size: 16px;
-  color: rgba(255,255,255,0.95);
-}
-
-.contact-form input,
-.contact-form select,
-.contact-form textarea {
-  width: 100%;
-  padding: 14px;
-  border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.12);
-
-  background: rgba(255,255,255,0.12);
-  backdrop-filter: blur(10px);
-  color: white;
-
-  font-size: 16px;
-  outline: none;
-  transition: 0.25s ease;
-}
-
-/* Ensure select options are visible */
-.contact-form select option {
-  background: rgba(0,0,0,0.8);
-  color: white;
-  padding: 8px;
-}
-
-.contact-form input:focus,
-.contact-form select:focus,
-.contact-form textarea:focus {
-  border-color: var(--accent);
-  box-shadow: 0 0 14px rgba(255,120,247,0.7);
-}
-
-textarea {
-  min-height: 140px;
-  resize: vertical;
-}
-
-/* Submit button */
-.submit-btn {
-  padding: 14px 20px;
-  border-radius: 14px;
-  border: none;
-
-  background: var(--accent);
-  color: white;
-  font-size: 18px;
-  font-weight: 700;
-  cursor: pointer;
-
-  transition: 0.25s ease;
-  box-shadow: 0 0 16px rgba(255,120,247,0.8);
-}
-
-.submit-btn:hover {
-  transform: scale(1.05);
-  box-shadow:
-    0 0 18px rgba(255,120,247,1),
-    0 0 26px rgba(120,200,255,1);
-}
 /* ==========================================
    FLOATING BACK-TO-TOP BUTTON (always visible)
 ========================================== */
@@ -1176,7 +1003,8 @@ textarea {
 /* Ensure content stays above cursor visually */
 .hero-wrap,
 .content,
-.footer{
+.footer,
+.contact-section {
   position: relative;
   z-index: 10;
 }
@@ -1277,4 +1105,336 @@ label {
     }
   }
 }
+
+/* =========================
+   CONTACT SECTION
+========================= */
+/* Ensure content stays above cursor visually */
+.hero-wrap,
+.content,
+.footer,
+.contact-section {
+  position: relative;
+  z-index: 10;
+}
+
+.contact-section {
+  padding: 40px 20px; /* Reduced padding to fit the electric border card */
+  text-align: center;
+  margin-top: 60px;
+}
+
+.contact-heading {
+  font-size: 32px;
+  margin-bottom: 40px;
+  font-weight: 800;
+  text-shadow:
+    0 0 16px rgba(255,120,247,0.7),
+    0 0 24px rgba(120,200,255,0.7);
+}
+
+.contact-form {
+  max-width: 500px;
+  margin: auto;
+  /* Removed background since it's now on the electric border card */
+  border-radius: 16px;
+  padding: 30px; /* Increased padding for better spacing */
+  /* Removed border and box-shadow to let electric border show through */
+}
+
+.form-row {
+  margin-bottom: 18px;
+  text-align: left;
+}
+
+.form-row label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.95);
+}
+
+.form-row input,
+.form-row select,
+.form-row textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(10px);
+  color: #000;
+  font-size: 16px;
+  outline: none;
+  transition: 0.25s ease;
+}
+
+.form-row input:focus,
+.form-row select:focus,
+.form-row textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 14px rgba(255,120,247,0.7);
+}
+
+.form-row select option {
+  background: rgba(248, 4, 4, 0.8);
+  color: white;
+}
+
+.form-row textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #03f6d9, #ff3d00);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.25s ease;
+  box-shadow: 0 0 16px rgba(255,120,247,0.8);
+}
+
+.submit-btn:hover {
+  transform: scale(1.05);
+  box-shadow:
+    0 0 18px rgba(255,120,247,1),
+    0 0 26px rgba(120,200,255,1);
+}
+
+#formStatus {
+  margin-top: 12px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .contact-section {
+    padding: 60px 15px;
+    margin-top: 40px;
+  }
+
+  .contact-heading {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .contact-form {
+    padding: 25px;
+  }
+
+  .form-row input,
+  .form-row select,
+  .form-row textarea {
+    font-size: 16px;
+  }
+}
+
+/* Electric Border Styles - Added for dramatic effect behind contact form */
+:root {
+  --electric-border-color: #dd8448;
+  --electric-light-color: oklch(from var(--electric-border-color) l c h);
+  --gradient-color: oklch(from var(--electric-border-color) 0.3 calc(c / 2) h / 0.4);
+  --color-neutral-900: oklch(0.185 0 0);
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* Removed height: 100vh to fit within contact section */
+}
+
+.card-container {
+  padding: 2px;
+  border-radius: 24px;
+  position: relative;
+  background: linear-gradient(-30deg, var(--gradient-color), transparent, var(--gradient-color)), linear-gradient(to bottom, var(--color-neutral-900), var(--color-neutral-900));
+}
+
+.inner-container {
+  position: relative;
+}
+
+.canvas-container {
+  position: relative;
+  width: 600px; /* Much larger size for dramatic effect */
+  height: 800px; /* Much larger size for dramatic effect */
+}
+
+.electric-border-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* Removed centering transform for better fit */
+  width: 600px; /* Increased to match container */
+  height: 800px; /* Increased to match container */
+}
+
+/* Glow effects - Create layered glow around the border */
+.glow-layer-1 {
+  border: 2px solid rgba(221, 132, 72, 0.6);
+  border-radius: 24px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  filter: blur(1px);
+}
+
+.glow-layer-2 {
+  border: 2px solid var(--electric-light-color);
+  border-radius: 24px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  filter: blur(4px);
+}
+
+/* Overlay effects - Add blend modes for visual depth */
+.overlay-1 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 24px;
+  opacity: 1;
+  mix-blend-mode: overlay;
+  transform: scale(1.1);
+  filter: blur(16px);
+  background: linear-gradient(-30deg, white, transparent 30%, transparent 70%, white);
+}
+
+.overlay-2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 24px;
+  opacity: 0.5;
+  mix-blend-mode: overlay;
+  transform: scale(1.1);
+  filter: blur(16px);
+  background: linear-gradient(-30deg, white, transparent 30%, transparent 70%, white);
+}
+
+.background-glow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 24px;
+  filter: blur(32px);
+  transform: scale(1.1);
+  opacity: 0.3;
+  z-index: -1;
+  background: linear-gradient(-30deg, var(--electric-light-color), transparent, var(--electric-border-color));
+}
+
+.content-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Content sections - Layout for form content */
+.content-top {
+  display: flex;
+  flex-direction: column;
+  padding: 48px; /* Increased padding for larger box */
+  padding-bottom: 8px;
+  height: 100%;
+}
+
+.content-bottom {
+  display: flex;
+  flex-direction: column;
+  padding: 48px; /* Increased padding for larger box */
+  padding-top: 8px;
+}
+
+.button-glass {
+  background: radial-gradient(47.2% 50% at 50.39% 88.37%, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%), rgba(255, 255, 255, 0.04);
+  position: relative;
+  transition: background 0.3s ease;
+  border-radius: 14px;
+  width: fit-content;
+  height: fit-content;
+  padding: 8px 16px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.button-glass:hover {
+  background: radial-gradient(47.2% 50% at 50.39% 88.37%, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%), rgba(255, 255, 255, 0.08);
+}
+
+.button-glass::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1px;
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.48) 16.73%, rgba(255, 255, 255, 0.08) 30.2%, rgba(255, 255, 255, 0.08) 68.2%, rgba(255, 255, 255, 0.6) 81.89%);
+  border-radius: inherit;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask-composite: xor;
+  pointer-events: none;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 500;
+  margin-top: auto;
+}
+
+.description {
+  opacity: 0.5;
+}
+
+.divider {
+  margin-top: auto;
+  border: none;
+  height: 1px;
+  background-color: currentColor;
+  opacity: 0.1;
+  mask-image: linear-gradient(to right, transparent, black, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black, transparent);
+}
+
+
 

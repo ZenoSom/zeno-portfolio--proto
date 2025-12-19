@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Somnath Singh — Samurai Bio</title>
+  <title>𝓩𝓮𝓷𝓸𝓯𝓸𝓵𝓲𝓸</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 
@@ -265,46 +265,70 @@
   <button id="backToTop" class="back-to-top">↑</button>
 </footer>
 
-<!-- CONTACT FORM -->
-<section class="contact-section">
-  <h2 class="contact-heading">Connect Me</h2>
+<!-- CONTACT SECTION -->
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="main-container">
+    <div class="card-container">
+      <div class="inner-container">
+        <div class="canvas-container">
+          <canvas id="electric-border-canvas" class="electric-border-canvas" width="500" height="650"></canvas>
+        </div>
+        <div class="glow-layer-1"></div>
+        <div class="glow-layer-2"></div>
+      </div>
+      <div class="overlay-1"></div>
+      <div class="overlay-2"></div>
+      <div class="background-glow"></div>
+      <div class="content-container">
+        <div class="content-top">
+          <h2 class="contact-heading">Connect Me</h2>
+        </div>
+        <div class="content-bottom">
+          <form id="contactForm" class="contact-form" action="https://formsubmit.co/singhsomnath2006@gmail.com" method="POST">
 
-  <form action="https://formsubmit.co/singhsomnath2006@gmail.com" method="POST" class="contact-form">
+            <div class="form-row">
+              <label>Your Name</label>
+              <input type="text" name="name" placeholder="Enter your name" required>
+            </div>
 
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_subject" value="New Contact Form Submission!">
-    <input type="hidden" name="_template" value="box">
-    <input type="hidden" name="_next" value="https://your-website-url.com/thank-you.html">
+            <div class="form-row">
+              <label>Your Email</label>
+              <input type="email" name="email" placeholder="Enter your email" required>
+            </div>
 
-    <div class="form-row">
-      <label>Your Name</label>
-      <input type="text" name="name" required>
+            <div class="form-row">
+              <label>Reason for Contact</label>
+              <select name="reason" required>
+                <option value="">Select reason...</option>
+                <option>Project Inquiry</option>
+                <option>Collaboration</option>
+                <option>Help Needed</option>
+                <option>Just Saying Hi</option>
+              </select>
+            </div>
+
+            <div class="form-row">
+              <label>Message</label>
+              <textarea name="message" placeholder="Write your message..." required></textarea>
+            </div>
+
+            <!-- FormSubmit hidden fields -->
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_subject" value="New Contact Form Submission!">
+            <input type="hidden" name="_template" value="box">
+            <input type="hidden" name="_next" value="https://yourwebsite.com/thankyou.html"> <!-- Optional: redirect after submit -->
+
+            <button type="submit" class="submit-btn">Send Message</button>
+
+            <p id="formStatus"></p>
+          </form>
+        </div>
+      </div>
     </div>
-
-    <div class="form-row">
-      <label>Your Email</label>
-      <input type="email" name="email" required>
-    </div>
-
-    <div class="form-row">
-      <label>Reason for Contact</label>
-      <select name="reason" required>
-        <option value="">Select reason...</option>
-        <option>Project Inquiry</option>
-        <option>Collaboration</option>
-        <option>Help Needed</option>
-        <option>Just Saying Hi</option>
-      </select>
-    </div>
-
-    <div class="form-row">
-      <label>Message</label>
-      <textarea name="message" required></textarea>
-    </div>
-
-    <button type="submit" class="submit-btn">Send Message</button>
-  </form>
+  </div>
 </section>
+
 <!-- WebGL Cursor Mount -->
 <div id="webgl-cursor">
   <canvas id="cursor-canvas"></canvas>
