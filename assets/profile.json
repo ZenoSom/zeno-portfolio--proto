@@ -35,6 +35,13 @@
     "link": "https://resistor-calculator-v1-9.vercel.app/"
   },
   {
+      "title": "ROJECT CIPHER: Enhanced clue ZENO",
+      "description": "(LOCKED)Enhanced Hacker ZENO is an interactive web-based cryptography challenge platform designed to teach encryption and decryption concepts through hands-on puzzles. It includes classical and modern ciphers like Caesar Cipher, RSA, and hash cracking, presented in a hacker-themed interface to make learning engaging and practical.",
+      "image": "assets/icons/Screenshot 2025-12-20 at 3.07.49 PM.png",
+      "category": "Security",
+      "link": "https://preeminent-zabaione-c0ba6e.netlify.app"
+    },
+  {
     "title": "AI Material Classifier",
       "description": "AI model to classify biodegradable vs non-biodegradable waste.",
       "image": "assets/icons/Screenshot 2025-11-23 at 8.04.58 PM.png",
@@ -87,7 +94,7 @@
 },
   {
   "title": "🥇 First Position – Central Level Science & Mathematics Exhibition (Delhi)",
-  "year": "2025",
+  "year": "2024",
   "description": "Secured First Position at the Central Level in the Science & Mathematics Exhibition (Session 2023–2024) organized by the Directorate of Education, Government of NCT of Delhi at Science Centre . An innovative working model on Transport and Communication, demonstrating strong analytical thinking, problem-solving ability, and scientific innovation."
 },
       {
@@ -96,9 +103,10 @@
         "description": "RSecured Rank 1 in Delhi in the Orange Global Olympiad (Astronomy).Recognized for exceptional performance, strong scientific aptitude, and advanced understanding of astronomy concepts among participants across Delhi."
       },
       {
-        "title": "Best Mini Project",
-        "year": "2023",
-        "description": "Awarded for building a real-time weather and AQI dashboard."
+        "title": "Finalist – TechFrontier 2025 (IIIT Delhi)",
+        "year": "2025",
+        "description": "Finalist at TechFrontier 2025, an open innovation hackathon organized by IIIT Delhi, advancing from idea submission to final evaluation by presenting a scalable, technically sound, and impactful solution."
+
       },
       {
         "title": "Technical Event Winner",
@@ -109,18 +117,18 @@
 
     "certifications": [
       {
-  "title": "Summer Training Programme on Remote Sensing & GIS",
-  "year": "2021",
+  "title": "ISA Summer Training Programme on Remote Sensing & GIS",
+  "year": "2025",
   "description": "Successfully completed an online summer training programme conducted by the Indian Institute of Remote Sensing (IIRS), ISRO, focusing on fundamentals and applications of Remote Sensing and GIS technologies."
 },
 {
-  "title": "Online Summer School on Remote Sensing & GIS for Environmental Studies",
+  "title": "ISRO Online Summer School on Remote Sensing & GIS for Environmental Studies",
   "year": "2021",
   "description": "Completed an advanced online summer school by IIRS, ISRO highlighting the usefulness of Remote Sensing and GIS in environmental studies, resource monitoring, and sustainable development."
 },
      {
   "title": "Composio x DevClub IIT Delhi Hackathon – Agents in Production",
-  "year": "2024",
+  "year": "2025",
   "description": "Received a Certificate of Participation from the Indian Institute of Technology (IIT) Delhi for participating in the Composio x DevClub IITD x Chirality Labs ‘Agents in Production’ Hackathon, demonstrating problem-solving skills, dedication, and collaborative development."
 },
      {
