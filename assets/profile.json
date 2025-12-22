@@ -93,9 +93,9 @@
   "description": "Achieved First Rank at the Central Level Science & Mathematics Exhibition conducted by the Directorate of Education, Delhi.Recognized for excellence in conceptual clarity, real-world application, and presentation skills through a science model at Science Centre Central." 
 },
   {
-  "title": "🥇 First Position – Central Level Science & Mathematics Exhibition (Delhi)",
+  "title": "🥇 First Position – District Level Science & Mathematics Exhibition (Delhi)",
   "year": "2024",
-  "description": "Secured First Position at the Central Level in the Science & Mathematics Exhibition (Session 2023–2024) organized by the Directorate of Education, Government of NCT of Delhi at Science Centre . An innovative working model on Transport and Communication, demonstrating strong analytical thinking, problem-solving ability, and scientific innovation."
+  "description": "Secured First Position at the District Level in the Science & Mathematics Exhibition (Session 2023–2024) organized by the Directorate of Education, Government of NCT of Delhi at Science Centre . An innovative working model on Transport and Communication, demonstrating strong analytical thinking, problem-solving ability, and scientific innovation."
 },
       {
         "title": "Delhi Rank 1 – Orange Global Olympiad (Astronomy)",
@@ -136,6 +136,11 @@
   "year": "2025",
   "description": "Participated in an intensive  workshop focused on the core principles and practical applications of Artificial Intelligence, Machine Learning, and Data Science, conducted by industry experts from Ethical Edufabrica in association with Sangram ’25, the annual techno-management festival of IIT Roorkee."
 },
+{
+  "title": "Indian Space Academy – Department of Space Education इंडियन स्पेस अकादमी – अंतरिक्ष शिक्षा विभाग | रिमोट सेंसिंग एवं जीआईएस",
+  "year": "2022",
+        "description": "(GIS) training program conducted by the Indian Space Academy, Department of Space Education, during India Space Week.The program provided hands-on exposure to satellite data analysis, spatial mapping, and practical applications of geospatial technologies"
+      },
 
       {
         "title": "IoT with Arduino",
