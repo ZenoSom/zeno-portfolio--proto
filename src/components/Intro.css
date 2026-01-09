@@ -3,6 +3,7 @@
 .intro-wrapper {
     width: 100vw;
     height: 100vh;
+    height: 100dvh;
     padding: 0;
     margin: 0;
     display: flex;
@@ -14,6 +15,14 @@
     top: 0;
     left: 0;
     z-index: 9999;
+}
+
+@media (max-width: 768px) {
+    .intro-wrapper {
+        align-items: flex-start;
+        /* Better vertical centering control on mobile */
+        padding-top: 15vh;
+    }
 }
 
 .intro-card,
@@ -305,4 +314,19 @@
 
 .lets-dive-btn:active {
     transform: translateX(-50%) scale(0.95);
+}
+
+@media (max-width: 768px) {
+    .lets-dive-btn {
+        bottom: 120px;
+        /* higher up for mobile browsers */
+        padding: 18px 45px;
+        /* larger touch target */
+        width: 80%;
+        max-width: 300px;
+        font-size: 20px;
+        background: rgba(0, 0, 0, 0.4);
+        /* clearer visibility against busy backgrounds */
+        border: 2px solid rgba(255, 255, 255, 0.5);
+    }
 }
