@@ -36,6 +36,7 @@ body {
   background: #000;
   color: var(--text);
   -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
 }
 
 /* background */
@@ -72,6 +73,7 @@ body {
   inset: 0;
   z-index: 10;
   pointer-events: none;
+  will-change: transform;
 }
 
 /* MUSIC toggle + bar */
