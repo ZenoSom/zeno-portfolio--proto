@@ -57,14 +57,14 @@ export default function SpaceTeleportNav() {
 
         // Glitch Chaos (HYPER SPEED)
         tl.to(scanlines, {
-            duration: 0.05,
+            duration: 0.03,
             opacity: 1,
             scaleX: 1,
             y: () => Math.random() * window.innerHeight,
             stagger: {
-                amount: 0.05,
+                amount: 0.03,
                 from: "random",
-                repeat: 2,
+                repeat: 1,
                 yoyo: true
             },
             ease: "rough({ strength: 2, points: 10, randomize: true })"
@@ -76,12 +76,12 @@ export default function SpaceTeleportNav() {
                 yoyo: true
             }, "<")
             .to("#app-wrapper", {
-                duration: 0.1,
-                scale: 1.02, // Less scale for speed
-                filter: "blur(4px) contrast(150%) hue-rotate(90deg)",
-                x: () => (Math.random() - 0.5) * 20,
-                y: () => (Math.random() - 0.5) * 20,
-                skewX: 10,
+                duration: 0.05,
+                scale: 1.01, // Less scale for speed
+                filter: "blur(2px) contrast(120%) hue-rotate(45deg)",
+                x: () => (Math.random() - 0.5) * 10,
+                y: () => (Math.random() - 0.5) * 10,
+                skewX: 5,
                 ease: "rough({ strength: 2, points: 10 })"
             }, "<")
 
@@ -95,7 +95,7 @@ export default function SpaceTeleportNav() {
 
             // Restoration (Instant Snap)
             .to("#app-wrapper", {
-                duration: 0.15,
+                duration: 0.1,
                 scale: 1,
                 filter: "none",
                 x: 0,
@@ -115,7 +115,7 @@ export default function SpaceTeleportNav() {
         <>
             <div className="crack-overlay">
                 <div className="glitch-flash"></div>
-                {Array.from({ length: 15 }).map((_, i) => (
+                {Array.from({ length: 10 }).map((_, i) => (
                     <div key={i} className="glitch-scanline" style={{ background: i % 2 === 0 ? 'cyan' : '#ff00ff' }}></div>
                 ))}
             </div>
