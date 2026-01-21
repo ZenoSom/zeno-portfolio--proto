@@ -11,8 +11,8 @@ const Intro = ({ onComplete }) => {
             if (contentRef.current) {
                 const viewportWidth = window.innerWidth;
                 const viewportHeight = window.innerHeight;
-                const baseWidth = 1200;
-                const baseHeight = 675;
+                const baseWidth = 1400;
+                const baseHeight = 788;
 
                 // Calculate scale based on both width and height to fit properly
                 const scaleByWidth = viewportWidth < baseWidth ? (viewportWidth / baseWidth) * 1.0 : 1;
@@ -22,7 +22,7 @@ const Intro = ({ onComplete }) => {
                 const scaleFactor = Math.min(scaleByWidth, scaleByHeight, 1);
 
                 // Apply minimum scale for very small screens
-                const finalScale = Math.max(scaleFactor, 0.6);
+                const finalScale = Math.max(scaleFactor, 0.7);
 
                 contentRef.current.style.transform = `scale(${finalScale})`;
             }
@@ -45,7 +45,7 @@ const Intro = ({ onComplete }) => {
     return (
         <div className="intro-wrapper">
             <div className="intro-container">
-                <div className="intro-content" ref={contentRef} style={{ display: 'block', width: '1200px', height: '675px' }}>
+                <div className="intro-content" ref={contentRef} style={{ display: 'block', width: '1400px', height: '788px' }}>
                     <div className="intro-container-full">
                         <div className="animated hue"></div>
                         <img className="backgroundImage" src="/intro-bg-base.png" alt="background" />
