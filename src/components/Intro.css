@@ -39,15 +39,15 @@
 }
 
 .intro-card {
-    width: 1280px;
-    height: 720px;
+    width: 1440px;
+    height: 810px;
     margin: 0;
     justify-content: center;
 }
 
 .intro-container-full,
 .intro-content {
-    width: 1000px;
+    width: 1200px;
     height: 562px;
 }
 
