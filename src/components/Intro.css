@@ -19,9 +19,11 @@
 
 @media (max-width: 768px) {
     .intro-wrapper {
-        align-items: flex-start;
-        /* Better vertical centering control on mobile */
-        padding-top: 15vh;
+        align-items: center;
+        /* Keep centered on mobile */
+        justify-content: center;
+        padding-top: 0;
+        /* Remove top padding that was pushing content */
     }
 }
 
@@ -318,15 +320,38 @@
 
 @media (max-width: 768px) {
     .lets-dive-btn {
-        bottom: 120px;
-        /* higher up for mobile browsers */
+        position: fixed;
+        /* Use fixed to ensure visibility regardless of content scroll/scale */
+        bottom: 10dvh;
+        /* Use dynamic viewport height for mobile browser compatibility */
+        bottom: calc(env(safe-area-inset-bottom, 20px) + 30px);
+        /* Fallback + safe area for notch devices */
         padding: 18px 45px;
-        /* larger touch target */
+        /* Larger touch target */
         width: 80%;
         max-width: 300px;
         font-size: 20px;
-        background: rgba(0, 0, 0, 0.4);
-        /* clearer visibility against busy backgrounds */
-        border: 2px solid rgba(255, 255, 255, 0.5);
+        background: rgba(0, 0, 0, 0.6);
+        /* Increased opacity for better visibility */
+        border: 2px solid rgba(255, 255, 255, 0.7);
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+        /* Shadow for contrast */
+    }
+}
+
+/* Extra small screens and landscape mobile */
+@media (max-width: 768px) and (max-height: 500px) {
+    .lets-dive-btn {
+        bottom: 15px;
+        padding: 12px 30px;
+        font-size: 16px;
+    }
+}
+
+/* Ensure button is always accessible in desktop mode on mobile */
+@media (max-width: 1024px) {
+    .lets-dive-btn {
+        position: fixed;
+        bottom: max(30px, env(safe-area-inset-bottom, 0px) + 20px);
     }
 }

@@ -10,11 +10,24 @@ const Intro = ({ onComplete }) => {
         const adjustContentSize = () => {
             if (contentRef.current) {
                 const viewportWidth = window.innerWidth;
+                const viewportHeight = window.innerHeight;
                 const baseWidth = 1000;
-                const scaleFactor = viewportWidth < baseWidth ? (viewportWidth / baseWidth) * 0.8 : 1;
-                contentRef.current.style.transform = `scale(${scaleFactor})`;
+                const baseHeight = 562;
+
+                // Calculate scale based on both width and height to fit properly
+                const scaleByWidth = viewportWidth < baseWidth ? (viewportWidth / baseWidth) * 0.85 : 1;
+                const scaleByHeight = viewportHeight < baseHeight + 150 ? (viewportHeight / (baseHeight + 150)) * 0.8 : 1;
+
+                // Use the smaller scale factor to ensure it fits both dimensions
+                const scaleFactor = Math.min(scaleByWidth, scaleByHeight, 1);
+
+                // Apply minimum scale for very small screens
+                const finalScale = Math.max(scaleFactor, 0.35);
+
+                contentRef.current.style.transform = `scale(${finalScale})`;
             }
         };
+
 
         window.addEventListener("load", adjustContentSize);
         window.addEventListener("resize", adjustContentSize);
