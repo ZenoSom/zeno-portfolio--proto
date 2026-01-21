@@ -381,9 +381,37 @@ h1 {
   border-radius: 12px;
 }
 
+/* Mobile optimizations for neural network visualization */
 @media (max-width: 768px) {
+  .neural-section {
+    margin-bottom: 24px;
+    padding: 0 10px;
+  }
+
+  .neural-section .section-heading {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  .neural-container {
+    padding: 10px;
+    border-radius: 12px;
+  }
+
   .neural-container iframe {
-    height: 350px;
+    height: 280px;
+    border-radius: 8px;
+  }
+}
+
+/* Extra small mobile screens */
+@media (max-width: 480px) {
+  .neural-container iframe {
+    height: 220px;
+  }
+
+  .neural-section .section-heading {
+    font-size: 16px;
   }
 }
 
@@ -2054,6 +2082,38 @@ label {
   }
 }
 
+/* ================= NEURAL NEWS SECTION ================= */
+/* Neural Tech News component wrapper */
+.neural-news-section {
+  position: relative;
+  z-index: 10;
+  max-width: 1200px;
+  margin: 0 auto 60px;
+  padding: 0 20px;
+}
+
+.neural-news-section .section-heading {
+  font-size: 24px;
+  font-weight: 800;
+  color: #fff;
+  text-shadow: 0 0 12px rgba(255, 120, 247, 0.6);
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* Mobile specific styles for neural-news-section */
+@media (max-width: 768px) {
+  .neural-news-section {
+    padding: 0 16px;
+    margin: 0 auto 40px;
+  }
+
+  .neural-news-section .section-heading {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+}
+
 /* ================= TECH NEWS SECTION ================= */
 .news-section {
   position: relative;
@@ -2103,6 +2163,22 @@ label {
   flex-wrap: wrap;
 }
 
+/* Mobile scrollable filter bar */
+@media (max-width: 640px) {
+  .news-filters {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .news-filters::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 .filter-btn {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -2113,6 +2189,7 @@ label {
   cursor: pointer;
   transition: all 0.3s ease;
   backdrop-filter: blur(4px);
+  white-space: nowrap;
 }
 
 .filter-btn:hover {
@@ -2126,6 +2203,15 @@ label {
   border-color: rgba(201, 107, 255, 0.6);
   color: #fff;
   box-shadow: 0 0 12px rgba(201, 107, 255, 0.3);
+}
+
+/* Mobile filter button sizing */
+@media (max-width: 640px) {
+  .filter-btn {
+    padding: 10px 14px;
+    font-size: 13px;
+    flex-shrink: 0;
+  }
 }
 
 .news-search {
@@ -2164,8 +2250,16 @@ label {
 /* NEWS GRID */
 .news-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 24px;
+}
+
+/* Mobile improvements for news grid */
+@media (max-width: 640px) {
+  .news-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
 }
 
 /* NEWS CARD - GLASSMORPHISM */
