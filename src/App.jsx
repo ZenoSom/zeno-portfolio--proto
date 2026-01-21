@@ -20,6 +20,8 @@ function App() {
     const { profile, loading } = useProfile();
     const [showIntro, setShowIntro] = useState(true);
     const [contentVisible, setContentVisible] = useState(false);
+    const [isDesktopMode, setIsDesktopMode] = useState(window.innerWidth < 768);
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
     useEffect(() => {
         // Neural Network Intersection Observer
@@ -36,6 +38,25 @@ function App() {
             return () => observer.disconnect();
         }
     }, [loading]);
+
+    useEffect(() => {
+        // Handle desktop mode viewport
+        const viewport = document.querySelector('meta[name=viewport]');
+        if (viewport) {
+            viewport.setAttribute('content', isDesktopMode ? 'width=1200' : 'width=device-width, initial-scale=1.0');
+        }
+    }, [isDesktopMode]);
+
+    useEffect(() => {
+        // Handle window resize for mobile detection
+        const handleResize = () => {
+            const mobile = window.innerWidth < 768;
+            setIsMobile(mobile);
+            setIsDesktopMode(mobile);
+        };
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     useEffect(() => {
         // Back to Top Scroll Logic
