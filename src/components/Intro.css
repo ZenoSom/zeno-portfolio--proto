@@ -25,6 +25,11 @@
         padding-top: 0;
         /* Remove top padding that was pushing content */
     }
+
+    .intro-card {
+        transform: scale(0.35);
+        /* Scale down for mobile */
+    }
 }
 
 .intro-card,
@@ -288,7 +293,7 @@
 /* Lets Dive Button */
 .lets-dive-btn {
     position: absolute;
-    bottom: 50px;
+    bottom: 120px;
     /* Adjusted position */
     left: 50%;
     transform: translateX(-50%);
@@ -322,7 +327,7 @@
     .lets-dive-btn {
         position: fixed;
         /* Use fixed to ensure visibility regardless of content scroll/scale */
-        bottom: 10dvh;
+        bottom: 15dvh;
         /* Use dynamic viewport height for mobile browser compatibility */
         bottom: calc(env(safe-area-inset-bottom, 20px) + 30px);
         /* Fallback + safe area for notch devices */
@@ -342,7 +347,7 @@
 /* Extra small screens and landscape mobile */
 @media (max-width: 768px) and (max-height: 500px) {
     .lets-dive-btn {
-        bottom: 15px;
+        bottom: 35px;
         padding: 12px 30px;
         font-size: 16px;
     }
@@ -352,6 +357,6 @@
 @media (max-width: 1024px) {
     .lets-dive-btn {
         position: fixed;
-        bottom: max(30px, env(safe-area-inset-bottom, 0px) + 20px);
+        bottom: max(60px, env(safe-area-inset-bottom, 0px) + 20px);
     }
 }

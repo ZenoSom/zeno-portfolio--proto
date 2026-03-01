@@ -12,7 +12,6 @@ import Skills from './components/Skills';
 import Contact from './components/Contact';
 import SakuraFooter from './components/SakuraFooter';
 import NeuralTechNews from './components/NeuralTechNews';
-import NeuralLink from './components/NeuralLink';
 import SpaceTeleportNav from './components/SpaceTeleportNav';
 
 
@@ -20,7 +19,7 @@ function App() {
     const { profile, loading } = useProfile();
     const [showIntro, setShowIntro] = useState(true);
     const [contentVisible, setContentVisible] = useState(false);
-    const [isDesktopMode, setIsDesktopMode] = useState(window.innerWidth < 768);
+    const [isDesktopMode, setIsDesktopMode] = useState(true); // Force true initially
     const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
     useEffect(() => {
@@ -48,11 +47,11 @@ function App() {
     }, [isDesktopMode]);
 
     useEffect(() => {
-        // Handle window resize for mobile detection
+        // Handle window resize for mobile detection (but keep desktop mode forced true)
         const handleResize = () => {
             const mobile = window.innerWidth < 768;
             setIsMobile(mobile);
-            setIsDesktopMode(mobile);
+            setIsDesktopMode(true); // Always force desktop mode
         };
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
@@ -135,8 +134,6 @@ function App() {
                     <p className="footer-license">
                         This website is licensed under the <strong>MIT License</strong>.
                     </p>
-
-                    <NeuralLink />
                 </footer>
             </div>
 
