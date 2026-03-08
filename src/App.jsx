@@ -12,7 +12,6 @@ import Skills from './components/Skills';
 import Contact from './components/Contact';
 import SakuraFooter from './components/SakuraFooter';
 import NeuralTechNews from './components/NeuralTechNews';
-import NeuralLink from './components/NeuralLink';
 import SpaceTeleportNav from './components/SpaceTeleportNav';
 
 
@@ -20,6 +19,8 @@ function App() {
     const { profile, loading } = useProfile();
     const [showIntro, setShowIntro] = useState(true);
     const [contentVisible, setContentVisible] = useState(false);
+    const [isDesktopMode, setIsDesktopMode] = useState(true); // Force true initially
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
     useEffect(() => {
         // Neural Network Intersection Observer
@@ -36,6 +37,25 @@ function App() {
             return () => observer.disconnect();
         }
     }, [loading]);
+
+    useEffect(() => {
+        // Handle desktop mode viewport
+        const viewport = document.querySelector('meta[name=viewport]');
+        if (viewport) {
+            viewport.setAttribute('content', isDesktopMode ? 'width=1200' : 'width=device-width, initial-scale=1.0');
+        }
+    }, [isDesktopMode]);
+
+    useEffect(() => {
+        // Handle window resize for mobile detection (but keep desktop mode forced true)
+        const handleResize = () => {
+            const mobile = window.innerWidth < 768;
+            setIsMobile(mobile);
+            setIsDesktopMode(true); // Always force desktop mode
+        };
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     useEffect(() => {
         // Back to Top Scroll Logic
@@ -114,8 +134,6 @@ function App() {
                     <p className="footer-license">
                         This website is licensed under the <strong>MIT License</strong>.
                     </p>
-
-                    <NeuralLink />
                 </footer>
             </div>
 

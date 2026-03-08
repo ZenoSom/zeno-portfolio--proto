@@ -4,9 +4,11 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 export default function Projects({ projects = [] }) {
     const [filter, setFilter] = useState("All");
+    const [showAll, setShowAll] = useState(false);
     const sliderRef = useRef(null);
 
     const filteredProjects = projects.filter(p => filter === "All" || p.category === filter);
+    const displayedProjects = showAll ? filteredProjects : filteredProjects.slice(0, 6);
 
     // GSAP Scroll Animation
     useEffect(() => {
@@ -85,8 +87,8 @@ export default function Projects({ projects = [] }) {
                 ))}
             </div>
 
-            <div className="projects-slider" id="projectsSlider" ref={sliderRef}>
-                {filteredProjects.map((p, i) => (
+            <div className={`projects-grid ${showAll ? 'expanded' : ''}`} id="projectsGrid" ref={sliderRef}>
+                {displayedProjects.map((p, i) => (
                     <div key={i} className={`project-card ${p.category}`}>
                         <img src={p.image} alt={p.title} loading="lazy" onError={(e) => e.target.src = "assets/icons/project-placeholder.png"} />
                         <h4>{p.title}</h4>
@@ -95,6 +97,22 @@ export default function Projects({ projects = [] }) {
                     </div>
                 ))}
             </div>
+
+            {filteredProjects.length > 6 && (
+                <div className="show-more-container">
+                    <button
+                        className="show-more-btn"
+                        onClick={() => {
+                            setShowAll(!showAll);
+                            if (showAll) {
+                                document.getElementById("projects").scrollIntoView({ behavior: "smooth" });
+                            }
+                        }}
+                    >
+                        {showAll ? "Show Less" : "Show More"}
+                    </button>
+                </div>
+            )}
         </section>
     );
 }

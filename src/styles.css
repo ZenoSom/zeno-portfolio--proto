@@ -36,6 +36,7 @@ body {
   background: #000;
   color: var(--text);
   -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
 }
 
 /* background */
@@ -72,6 +73,7 @@ body {
   inset: 0;
   z-index: 10;
   pointer-events: none;
+  will-change: transform;
 }
 
 /* MUSIC toggle + bar */
@@ -413,6 +415,18 @@ h1 {
   .neural-section .section-heading {
     font-size: 16px;
   }
+
+  /* Projects - extra small screens */
+  .projects-slider {
+    padding: 12px 8px;
+    gap: 12px;
+  }
+
+  .project-card {
+    flex: 0 0 calc(100vw - 24px);
+    min-width: calc(100vw - 24px);
+    max-width: calc(100vw - 24px);
+  }
 }
 
 /* SKILLS + TECH */
@@ -469,28 +483,12 @@ h1 {
 
 /* responsive */
 @media (max-width:1100px) {
-  .projects-grid {
-    grid-template-columns: repeat(2, 1fr)
-  }
-
   .hero-card {
     width: 92%
   }
 }
 
-@media (max-width:640px) {
-  .projects-grid {
-    grid-template-columns: repeat(1, 1fr)
-  }
-
-  .icons-grid {
-    grid-template-columns: repeat(2, 1fr)
-  }
-
-  h1 {
-    font-size: 30px
-  }
-}
+@media (max-width:640px) {}
 
 .avatar {
   width: 140px;
@@ -1115,18 +1113,15 @@ h1 {
   background: #ff6b6b
 }
 
-/* SLIDER */
-.projects-slider {
-  display: flex;
+/* GRID */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
-  overflow-x: auto;
   padding: 20px;
-  cursor: grab;
-  scroll-behavior: smooth;
-}
-
-.projects-slider:active {
-  cursor: grabbing
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 /* CARD */
@@ -1184,6 +1179,37 @@ h1 {
   border: none;
   cursor: pointer;
   font-weight: 700;
+}
+
+/* SHOW MORE BUTTON */
+.show-more-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  padding-bottom: 20px;
+}
+
+.show-more-btn {
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, rgba(201, 107, 255, 0.8), rgba(0, 255, 156, 0.8));
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.show-more-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.4),
+    0 0 15px rgba(201, 107, 255, 0.6),
+    0 0 15px rgba(0, 255, 156, 0.6);
+  border-color: rgba(255, 255, 255, 0.5);
 }
 
 /* JOURNEY SECTION */
@@ -1562,8 +1588,9 @@ label {
 .form-row label {
   display: block;
   margin-bottom: 6px;
-  font-weight: 600;
+  font-weight: 800;
   color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
 }
 
 .form-row input,
@@ -1891,6 +1918,13 @@ label {
     box-sizing: border-box;
   }
 
+  /* ---------- CONTENT CONTAINER ---------- */
+  .content {
+    padding: 0 0;
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+
   /* ---------- HERO SECTION ---------- */
   .hero-wrap {
     padding: 20px 14px;
@@ -1933,12 +1967,21 @@ label {
   }
 
   .projects-slider {
-    padding: 12px;
-    gap: 14px;
+    width: 100%;
+    max-width: 100vw;
+    padding: 16px;
+    gap: 16px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
   }
 
   .project-card {
-    flex: 0 0 88%;
+    flex: 0 0 calc(100vw - 40px);
+    min-width: calc(100vw - 40px);
+    max-width: calc(100vw - 40px);
+    scroll-snap-align: center;
   }
 
   /* ---------- SKILLS / TECH ---------- */
@@ -2542,7 +2585,7 @@ label {
   margin-bottom: 6px;
   font-size: 16px;
   color: #000;
-  font-weight: bold;
+  font-weight: 800;
 }
 
 .card-container,
@@ -2732,123 +2775,6 @@ label {
   box-shadow: 0 0 15px #fff, 0 0 5px var(--electric-color);
 }
 
-/* --- Neural Link (Warp Gate) --- */
-.neural-link-section {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  z-index: 99;
-  text-align: left;
-}
-
-.warp-gate-card {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(0, 10, 0, 0.8);
-  border: 1px solid #ffd700;
-  padding: 8px 16px;
-  /* Smaller padding */
-  border-radius: 20px;
-  text-decoration: none;
-  overflow: hidden;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  min-width: unset;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(5px);
-}
-
-.warp-gate-card:hover {
-  background: rgba(10, 20, 10, 0.95);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.2);
-}
-
-.gate-content {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  z-index: 2;
-}
-
-.gate-icon {
-  font-size: 1rem;
-  /* Smaller icon */
-  animation: bounce 2s infinite;
-}
-
-.gate-text {
-  display: flex;
-  flex-direction: column;
-}
-
-.gate-text h3 {
-  margin: 0;
-  color: #ffd700;
-  font-family: 'Share Tech Mono', monospace;
-  font-size: 0.75rem;
-  /* Very small text */
-  letter-spacing: 0.5px;
-  white-space: nowrap;
-}
-
-.gate-text p {
-  display: none;
-  /* Hide description for ultra-compact mode */
-}
-
-.warp-gate-card:hover .gate-text p {
-  display: block;
-  /* Show on hover if desired, or keep hidden */
-}
-
-.gate-arrow {
-  color: #ffd700;
-  font-size: 0.8rem;
-  opacity: 0.8;
-  transition: transform 0.3s ease;
-}
-
-.warp-gate-card:hover .gate-arrow {
-  transform: translateX(5px);
-  opacity: 1;
-}
-
-/* Internal Glow */
-.gate-glow {
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.2), transparent);
-  transform: skewX(-25deg);
-  animation: scan 3s infinite linear;
-}
-
-@keyframes scan {
-  0% {
-    left: -100%;
-  }
-
-  100% {
-    left: 200%;
-  }
-}
-
-@keyframes bounce {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-3px);
-  }
-}
 
 /* Add IDs to sections for scrolling if not already present */
 #projects,

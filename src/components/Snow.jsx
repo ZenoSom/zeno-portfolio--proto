@@ -19,8 +19,10 @@ export default function Snow() {
         const snowflakeChars = ['❄', '❅', '❆', '✻', '✼'];
 
         const flakes = [];
-        // Dense population
-        const density = Math.max(120, Math.round((W * H) / 35000));
+        // Dense population, reduced on mobile for performance
+        const isMobile = window.innerWidth < 768;
+        const baseDensity = Math.max(50, Math.round((W * H) / 35000));
+        const density = isMobile ? Math.min(baseDensity, 60) : baseDensity;
 
         for (let i = 0; i < density; i++) {
             flakes.push({
