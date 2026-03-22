@@ -20,14 +20,14 @@
     },
     {
       "title": "Resistor Pro -v1.9. -zeno",
-      "description": "Advanced resistor color-code calculator — live color preview, reverse calc, dark mode & save favorites",
+      "description": "Resistor Pro is an advanced resistor color-code calculator designed to make electronics calculations fast and accurate. It features real-time color previews, forward and reverse calculation modes, and support for 4, 5, and 6-band resistors. With a clean interface and smart tools like favorites and export options, it simplifies resistor decoding for students and engineers alike.",
       "image": "assets/icons/project-placeholder.png",
       "category": "Web",
       "link": "https://resistor-calculator-v1-9.vercel.app/"
     },
     {
       "title": "AtmoDash – Weather & AQI",
-      "description": "Real-time weather and AQI dashboard with live API integration.",
+      "description": "AtmoDash is a dynamic and modern web dashboard designed to provide real-time weather updates and air quality insights in a clean, visually engaging interface. It integrates live data through APIs to display key metrics such as temperature, humidity, wind speed, pressure, and AQI, helping users quickly understand environmental conditions. With its smooth design, responsive layout, and intuitive search functionality, AtmoDash transforms complex weather data into a simple and interactive user experience.",
       "image": "assets/icons/atmodash.png",
       "category": "Web",
       "link": "https://atmodash-zeno-som.netlify.app"
