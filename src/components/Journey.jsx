@@ -1,9 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 
 export default function Journey({ journeyData = {} }) {
     const [activeTab, setActiveTab] = useState("1"); // 1: Achievements, 2: Certifications, 3: Experience
-    const [modalItem, setModalItem] = useState(null);
+    const [showAll, setShowAll] = useState(false);
+    const timelineRef = useRef(null);
 
     const getCategory = (val) => {
         if (val === "1") return "achievements";
@@ -13,21 +14,22 @@ export default function Journey({ journeyData = {} }) {
     };
 
     const category = getCategory(activeTab);
-    const items = journeyData[category] || [];
+    const allItems = journeyData[category] || [];
+    const items = showAll ? allItems : allItems.slice(0, 3);
+    const hasMore = allItems.length > 3;
 
     // Event Listener for External Navigation
     useEffect(() => {
         const handleExternalNav = (e) => {
             const tab = e.detail;
             setActiveTab(tab);
-            setShowAll(true); // Auto-expand when navigating from menu
         };
 
         window.addEventListener('changeJourneyTab', handleExternalNav);
         return () => window.removeEventListener('changeJourneyTab', handleExternalNav);
     }, []);
 
-    // GSAP Animation Effect
+    // Original GSAP Animation Effect for the Tab Buttons (PRESERVED)
     useEffect(() => {
         const group = document.querySelector(`.radio-btn-group input[value="${activeTab}"]`)?.closest('.radio-btn-group');
         if (group) {
@@ -46,35 +48,26 @@ export default function Journey({ journeyData = {} }) {
                 { fill: "#0c79f7" },
                 {
                     fill: "#76b3fa",
-                    duration: 0.1,
-                    ease: "elastic.out(1, 0.3)",
+                    duration: 1.5,
+                    ease: "power2.inOut",
+                    yoyo: true,
                     repeat: -1
                 }
             );
 
             const randomNodes = nodes.slice(0, 5);
             gsap.to(randomNodes, {
-                duration: 0.7,
-                ease: "elastic.out(1, 0.1)",
+                duration: 1.5,
+                ease: "power2.inOut",
                 x: "100%",
-                stagger: 0.1,
-                repeatDelay: 1.5,
+                stagger: 0.2,
+                repeatDelay: 2.0,
                 repeat: -1
             });
-
-            // Reset others ?? - The original code resets "previous" button. 
-            // In React we re-render, so creating a new 'RadioButtonEffect' instance or logic might be tricky.
-            // We will simplify: animate the CURRENT one. The others will just be static or reset by re-render if we were fully mounting/unmounting, 
-            // but here we are just changing state.
-            // To be exact parity, we should ideally run the "off" animation for the previous one.
-            // But since we track activeTab, we can useEffect on activeTab change to trigger animations.
         }
     }, [activeTab]);
 
-
     const handleTabChange = (val) => {
-        // "Off" animation for current tab before switching? 
-        // The original code: changeEffect(previous, false) which moves x to -100%.
         const prevGroup = document.querySelector(`.radio-btn-group input[value="${activeTab}"]`)?.closest('.radio-btn-group');
         if (prevGroup) {
             const nodes = gsap.utils.selector(prevGroup)("rect");
@@ -89,19 +82,33 @@ export default function Journey({ journeyData = {} }) {
         setActiveTab(val);
     };
 
-
-    const [showAll, setShowAll] = useState(false);
-
     // Reset showAll when tab changes
     useEffect(() => {
         setShowAll(false);
     }, [activeTab]);
 
-    const visibleItems = showAll ? items : items.slice(0, 3);
-    const hasMore = items.length > 3;
+    // GSAP Animation for Timeline Cards when Tab Changes
+    useEffect(() => {
+        if (!timelineRef.current) return;
+        
+        const cards = timelineRef.current.querySelectorAll('.journey-card-modern');
+        if (cards.length > 0) {
+            gsap.fromTo(cards, 
+                { opacity: 0, x: -50, scale: 0.95 },
+                {
+                    opacity: 1,
+                    x: 0,
+                    scale: 1,
+                    duration: 0.6,
+                    stagger: 0.1,
+                    ease: "back.out(1.7)"
+                }
+            );
+        }
+    }, [activeTab]);
 
     return (
-        <section className="journey-section" id="journey">
+        <section className="journey-section modern-journey" id="journey">
             <div className="badges">
                 <span className="badge ai" title="AI / ML">🧠</span>
                 <span className="badge web" title="Web Development">🌐</span>
@@ -109,7 +116,7 @@ export default function Journey({ journeyData = {} }) {
                 <span className="badge internship" title="Internship / Experience">⚙️</span>
             </div>
 
-            <div className="container">
+            <div className="container" style={{ marginBottom: "20px" }}>
                 {[
                     { val: "1", label: "Achievements" },
                     { val: "2", label: "Certifications" },
@@ -138,35 +145,40 @@ export default function Journey({ journeyData = {} }) {
                 ))}
             </div>
 
-            <div className="journey-cards" id="journeyCards">
-                {visibleItems.map((item, i) => (
-                    <div key={i} className={`journey-card ${category}`} onClick={() => setModalItem(item)}>
-                        <h4>{item.title}</h4>
-                        <span>{item.year}</span>
-                        <p>Click to view</p>
-                    </div>
-                ))}
+            <div className="journey-timeline-modern" ref={timelineRef}>
+                {items.length === 0 ? (
+                    <div className="empty-state">No entries available yet.</div>
+                ) : (
+                    items.map((item, i) => (
+                        <div key={i} className={`journey-card-modern ${category}`}>
+                            <div className="timeline-dot"></div>
+                            <div className="journey-card-content">
+                                <div className="journey-header">
+                                    <h3 className="journey-title">{item.title}</h3>
+                                    <span className="journey-year">{item.year}</span>
+                                </div>
+                                <p className="journey-description">{item.description}</p>
+                            </div>
+                        </div>
+                    ))
+                )}
             </div>
 
             {hasMore && (
-                <div style={{ textAlign: 'center', marginTop: '20px' }}>
+                <div className="show-more-container-modern" style={{ paddingBottom: '30px' }}>
                     <button
-                        className="view-all-btn"
-                        onClick={() => setShowAll(!showAll)}
+                        className="show-more-btn-modern"
+                        onClick={() => {
+                            setShowAll(!showAll);
+                            if (showAll) {
+                                document.getElementById("journey").scrollIntoView({ behavior: "smooth" });
+                            }
+                        }}
                     >
-                        {showAll ? 'Show Less' : 'View All'}
+                        {showAll ? "Show Less" : "Show More"}
                     </button>
                 </div>
             )}
-
-            <div className={`journey-modal ${modalItem ? '' : 'hidden'}`} id="journeyModal">
-                <div className="journey-modal-card">
-                    <h3>{modalItem?.title}</h3>
-                    <span>{modalItem?.year}</span>
-                    <p>{modalItem?.description}</p>
-                    <button onClick={() => setModalItem(null)}>Close</button>
-                </div>
-            </div>
         </section>
     );
 }
