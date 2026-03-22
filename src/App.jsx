@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import useProfile from './hooks/useProfile';
-import Intro from './components/Intro';
-import SwordSound from './components/SwordSound';
+
 import Snow from './components/Snow';
 import Cursor from './components/Cursor';
 import MusicPlayer from './components/MusicPlayer';
@@ -17,9 +16,8 @@ import SpaceTeleportNav from './components/SpaceTeleportNav';
 
 function App() {
     const { profile, loading } = useProfile();
-    const [showIntro, setShowIntro] = useState(true);
     const [contentVisible, setContentVisible] = useState(false);
-    const [isDesktopMode, setIsDesktopMode] = useState(true); // Force true initially
+    const [isDesktopMode, setIsDesktopMode] = useState(window.innerWidth >= 768);
     const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
     useEffect(() => {
@@ -49,9 +47,9 @@ function App() {
     useEffect(() => {
         // Handle window resize for mobile detection (but keep desktop mode forced true)
         const handleResize = () => {
-            const mobile = window.innerWidth < 768;
-            setIsMobile(mobile);
-            setIsDesktopMode(true); // Always force desktop mode
+            const width = window.innerWidth;
+            setIsMobile(width < 768);
+            setIsDesktopMode(width >= 768); 
         };
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
@@ -78,10 +76,6 @@ function App() {
         window.scrollTo({ top: 0, behavior: "smooth" });
     };
 
-    if (showIntro) {
-        return <Intro onComplete={() => setShowIntro(false)} />;
-    }
-
     if (!profile && !loading) return <div className="error">Failed to load profile.</div>;
 
 
@@ -89,7 +83,6 @@ function App() {
     return (
         <>
             <SpaceTeleportNav />
-            <SwordSound />
             <Snow />
             <Cursor />
 
